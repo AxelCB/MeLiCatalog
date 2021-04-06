@@ -8,18 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		A60E4738261CA4110034DAE2 /* MeLiCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4737261CA4110034DAE2 /* MeLiCatalogApp.swift */; };
-		A60E473A261CA4110034DAE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4739261CA4110034DAE2 /* ContentView.swift */; };
+		A60E473A261CA4110034DAE2 /* ProductCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4739261CA4110034DAE2 /* ProductCatalogView.swift */; };
 		A60E473C261CA4120034DAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60E473B261CA4120034DAE2 /* Assets.xcassets */; };
 		A60E473F261CA4120034DAE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60E473E261CA4120034DAE2 /* Preview Assets.xcassets */; };
+		A60E474C261D17200034DAE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A60E474E261D17200034DAE2 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A60E4734261CA4110034DAE2 /* MeLiCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeLiCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60E4737261CA4110034DAE2 /* MeLiCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiCatalogApp.swift; sourceTree = "<group>"; };
-		A60E4739261CA4110034DAE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A60E4739261CA4110034DAE2 /* ProductCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogView.swift; sourceTree = "<group>"; };
 		A60E473B261CA4120034DAE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A60E473E261CA4120034DAE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A60E4740261CA4120034DAE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A60E474D261D17200034DAE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A60E4750261D17240034DAE2 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				A60E4737261CA4110034DAE2 /* MeLiCatalogApp.swift */,
-				A60E4739261CA4110034DAE2 /* ContentView.swift */,
+				A60E4739261CA4110034DAE2 /* ProductCatalogView.swift */,
 				A60E473B261CA4120034DAE2 /* Assets.xcassets */,
 				A60E4740261CA4120034DAE2 /* Info.plist */,
 				A60E473D261CA4120034DAE2 /* Preview Content */,
+				A60E474E261D17200034DAE2 /* Localizable.strings */,
 			);
 			path = MeLiCatalog;
 			sourceTree = "<group>";
@@ -110,6 +114,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = A60E472B261CA4110034DAE2;
 			productRefGroup = A60E4735261CA4110034DAE2 /* Products */;
@@ -127,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60E473F261CA4120034DAE2 /* Preview Assets.xcassets in Resources */,
+				A60E474C261D17200034DAE2 /* Localizable.strings in Resources */,
 				A60E473C261CA4120034DAE2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,12 +144,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60E473A261CA4110034DAE2 /* ContentView.swift in Sources */,
+				A60E473A261CA4110034DAE2 /* ProductCatalogView.swift in Sources */,
 				A60E4738261CA4110034DAE2 /* MeLiCatalogApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A60E474E261D17200034DAE2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A60E474D261D17200034DAE2 /* en */,
+				A60E4750261D17240034DAE2 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A60E4741261CA4120034DAE2 /* Debug */ = {
@@ -280,7 +298,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.axelcollardbovy.MeLiCatalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +320,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ar.com.axelcollardbovy.MeLiCatalog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
