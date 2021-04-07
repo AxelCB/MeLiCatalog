@@ -24,8 +24,11 @@ struct ProductCatalogView: View {
                 .cornerRadius(15)
                 .padding(.horizontal)
                 
-                ForEach(products, id: \.self) {
-                    Text($0)
+                
+                ForEach(products, id: \.self) { product in
+                    NavigationLink(destination: ProductDetailView(product: product)) {
+                        Text(product)
+                    }
                 }
             }
             .navigationTitle("products")
