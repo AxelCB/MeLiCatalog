@@ -15,14 +15,15 @@ struct ProductCatalogView: View {
         NavigationView {
             ScrollView {
                 SearchBarView(searchTerm: $searchTerm)
+                    .padding()
                 
                 ForEach(products, id: \.self) { product in
                     NavigationLink(destination: ProductDetailView(product: product)) {
-                        Text(product)
+                        ProductRow(product: product)
                     }
                 }
             }
-            .navigationTitle("products")
+            .navigationTitle("products")    
         }
     }
 }

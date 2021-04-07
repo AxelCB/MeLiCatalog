@@ -14,6 +14,7 @@
 		A60E474C261D17200034DAE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A60E474E261D17200034DAE2 /* Localizable.strings */; };
 		A60E4753261D1E220034DAE2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4752261D1E220034DAE2 /* ProductDetailView.swift */; };
 		A669FF50261D4059003491D8 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669FF4F261D4059003491D8 /* SearchBarView.swift */; };
+		A6FC96AF261D650600A3D6F9 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC96AE261D650600A3D6F9 /* ProductRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		A60E4750261D17240034DAE2 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		A60E4752261D1E220034DAE2 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		A669FF4F261D4059003491D8 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		A6FC96AE261D650600A3D6F9 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				A60E4737261CA4110034DAE2 /* MeLiCatalogApp.swift */,
 				A60E4739261CA4110034DAE2 /* ProductCatalogView.swift */,
 				A60E4752261D1E220034DAE2 /* ProductDetailView.swift */,
+				A6FC96AE261D650600A3D6F9 /* ProductRow.swift */,
 				A669FF4F261D4059003491D8 /* SearchBarView.swift */,
 				A60E473B261CA4120034DAE2 /* Assets.xcassets */,
 				A60E4740261CA4120034DAE2 /* Info.plist */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A669FF50261D4059003491D8 /* SearchBarView.swift in Sources */,
+				A6FC96AF261D650600A3D6F9 /* ProductRow.swift in Sources */,
 				A60E473A261CA4110034DAE2 /* ProductCatalogView.swift in Sources */,
 				A60E4738261CA4110034DAE2 /* MeLiCatalogApp.swift in Sources */,
 				A60E4753261D1E220034DAE2 /* ProductDetailView.swift in Sources */,
