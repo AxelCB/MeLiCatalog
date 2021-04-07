@@ -25,6 +25,7 @@ struct ProductCatalogView: View {
             }
             .navigationTitle("products")    
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
