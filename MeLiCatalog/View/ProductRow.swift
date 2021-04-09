@@ -8,28 +8,33 @@
 import SwiftUI
 
 struct ProductRow: View {
-    let product: String
+    let product: Product
     
     var body: some View {
-        HStack {
-            if let imageUrl = URL(string: product),
+        HStack (spacing: 8) {
+            if let imageUrl = URL(string: product.imageUrl),
                let imageData = try? Data(contentsOf: imageUrl),
                let uiImage = UIImage(data: imageData) {
                 Image(uiImage: uiImage)
+                    .cornerRadius(25)
             } else {
                 Image("person")
             }
-            VStack {
-                Text(product)
-                Text(product)
+            VStack (alignment: .leading, spacing: 8) {
+                Text(product.title)
+                    .font(.subheadline)
+                Text("\(product.formattedPrice)")
+                    .font(.title2)
+                    .fontWeight(.medium)
             }
-            Text(product)
+            .padding()
         }
+        .padding()
     }
 }
 
 struct ProductRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProductRow(product: "Sample Product")
+        ProductRow(product: Product.EXAMPLE)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ProductCatalogView.swift
 //  MeLiCatalog
 //
 //  Created by Axel Collard Bovy on 06/04/2021.
@@ -8,21 +8,26 @@
 import SwiftUI
 
 struct ProductCatalogView: View {
-    @State var products: [String] = Array(1..<50).map {String($0) }
-    @State var searchTerm = ""
+    @ObservedObject var viewModel = ProductCatalogViewModel()
     
     var body: some View {
         NavigationView {
             ScrollView {
-                SearchBarView(searchTerm: $searchTerm)
+                SearchBarView(searchTerm: $viewModel.searchTerm)
                     .padding()
-                
-                ForEach(products, id: \.self) { product in
-                    NavigationLink(destination: ProductDetailView(product: product)) {
+                ForEach(viewModel.products, id: \.self) { product in
+                    NavigationLink(destination: ProductDetailView(product: product.title)) {
                         ProductRow(product: product)
+                            .redacted(reason: viewModel.isLoading ? .placeholder : [])
+                    }.buttonStyle(PlainButtonStyle())
+                }
+            }.overlay(
+                Group {
+                    if viewModel.isLoading {
+                        ProgressView()
                     }
                 }
-            }
+            )
             .navigationTitle("products")    
         }
         .navigationViewStyle(StackNavigationViewStyle())
