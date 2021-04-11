@@ -60,4 +60,12 @@ class ProductCatalogViewModel: ObservableObject {
             }.store(in: &subscription)
 
     }
+    
+    func loadMoreProductsIfNeededAfter(product: Product) {
+        if let lastProduct = products.last {
+            if lastProduct.id == product.id {
+                searchProducts(forTerm: searchTerm)
+            }
+        }
+    }
 }

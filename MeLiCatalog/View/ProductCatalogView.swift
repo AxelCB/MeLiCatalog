@@ -14,13 +14,20 @@ struct ProductCatalogView: View {
         NavigationView {
             ScrollView {
                 SearchBarView(searchTerm: $viewModel.searchTerm)
-                    .padding()
-                ForEach(viewModel.products, id: \.self) { product in
-                    NavigationLink(destination: ProductDetailView(product: product.title)) {
-                        ProductRow(product: product)
-                            .redacted(reason: viewModel.isLoading ? .placeholder : [])
-                    }.buttonStyle(PlainButtonStyle())
+                    .padding(.vertical)
+                LazyVStack {
+                    ForEach(viewModel.products, id: \.self) { product in
+                        NavigationLink(destination: ProductDetailView(product: product)) {
+                            ProductRow(product: product)
+                                .redacted(reason: viewModel.isLoading ? .placeholder : [])
+                                .onAppear {
+                                    viewModel.loadMoreProductsIfNeededAfter(product: product)
+                                }
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
                 }
+                .frame(maxWidth: .infinity)
             }.overlay(
                 Group {
                     if viewModel.isLoading {
