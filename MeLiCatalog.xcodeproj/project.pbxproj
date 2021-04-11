@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A604CADC261FF9F500F50E32 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604CADB261FF9F500F50E32 /* ProductService.swift */; };
 		A604CADF261FFABE00F50E32 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604CADE261FFABE00F50E32 /* Page.swift */; };
+		A604CAE226211E5300F50E32 /* PaginatedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A604CAE126211E5300F50E32 /* PaginatedResponse.swift */; };
 		A60E4738261CA4110034DAE2 /* MeLiCatalogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4737261CA4110034DAE2 /* MeLiCatalogApp.swift */; };
 		A60E473A261CA4110034DAE2 /* ProductCatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4739261CA4110034DAE2 /* ProductCatalogView.swift */; };
 		A60E473C261CA4120034DAE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A60E473B261CA4120034DAE2 /* Assets.xcassets */; };
@@ -21,7 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A604CADB261FF9F500F50E32 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		A604CADE261FFABE00F50E32 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		A604CAE126211E5300F50E32 /* PaginatedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedResponse.swift; sourceTree = "<group>"; };
 		A60E4734261CA4110034DAE2 /* MeLiCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeLiCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60E4737261CA4110034DAE2 /* MeLiCatalogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeLiCatalogApp.swift; sourceTree = "<group>"; };
 		A60E4739261CA4110034DAE2 /* ProductCatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A604CADA261FF9A200F50E32 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				A604CADB261FF9F500F50E32 /* ProductService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A60E472B261CA4110034DAE2 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +79,7 @@
 		A60E4736261CA4110034DAE2 /* MeLiCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				A604CADA261FF9A200F50E32 /* Service */,
 				A611386A261E662D009876FB /* ViewModel */,
 				A6FC96B4261E516300A3D6F9 /* View */,
 				A6FC96B3261E514F00A3D6F9 /* Model */,
@@ -100,6 +113,7 @@
 			children = (
 				A6FC96B5261E529900A3D6F9 /* Product.swift */,
 				A604CADE261FFABE00F50E32 /* Page.swift */,
+				A604CAE126211E5300F50E32 /* PaginatedResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,8 +201,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A669FF50261D4059003491D8 /* SearchBarView.swift in Sources */,
+				A604CADC261FF9F500F50E32 /* ProductService.swift in Sources */,
 				A6FC96AF261D650600A3D6F9 /* ProductRow.swift in Sources */,
 				A60E473A261CA4110034DAE2 /* ProductCatalogView.swift in Sources */,
+				A604CAE226211E5300F50E32 /* PaginatedResponse.swift in Sources */,
 				A60E4738261CA4110034DAE2 /* MeLiCatalogApp.swift in Sources */,
 				A604CADF261FFABE00F50E32 /* Page.swift in Sources */,
 				A60E4753261D1E220034DAE2 /* ProductDetailView.swift in Sources */,
