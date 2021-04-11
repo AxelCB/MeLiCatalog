@@ -19,6 +19,7 @@
 		A6113868261E6628009876FB /* ProductCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6113867261E6628009876FB /* ProductCatalogViewModel.swift */; };
 		A669FF50261D4059003491D8 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669FF4F261D4059003491D8 /* SearchBarView.swift */; };
 		A6A03229262213AF00E6FDD0 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A03228262213AF00E6FDD0 /* ProductDetail.swift */; };
+		A6A0322C262213FC00E6FDD0 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0322B262213FC00E6FDD0 /* ProductDetailViewModel.swift */; };
 		A6A0322F262218C700E6FDD0 /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0322E262218C700E6FDD0 /* ItemResponse.swift */; };
 		A6FC96AF261D650600A3D6F9 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC96AE261D650600A3D6F9 /* ProductRow.swift */; };
 		A6FC96B6261E529900A3D6F9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC96B5261E529900A3D6F9 /* Product.swift */; };
@@ -40,6 +41,7 @@
 		A6113867261E6628009876FB /* ProductCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogViewModel.swift; sourceTree = "<group>"; };
 		A669FF4F261D4059003491D8 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		A6A03228262213AF00E6FDD0 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
+		A6A0322B262213FC00E6FDD0 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		A6A0322E262218C700E6FDD0 /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
 		A6FC96AE261D650600A3D6F9 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		A6FC96B5261E529900A3D6F9 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A6113867261E6628009876FB /* ProductCatalogViewModel.swift */,
+				A6A0322B262213FC00E6FDD0 /* ProductDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				A6FC96B6261E529900A3D6F9 /* Product.swift in Sources */,
 				A6A03229262213AF00E6FDD0 /* ProductDetail.swift in Sources */,
 				A6113868261E6628009876FB /* ProductCatalogViewModel.swift in Sources */,
+				A6A0322C262213FC00E6FDD0 /* ProductDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
