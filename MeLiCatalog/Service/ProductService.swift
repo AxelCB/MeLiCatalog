@@ -39,4 +39,22 @@ class ProductService {
         ]
         return URLRequest(url: components.url!)
     }
+    
+    func load(withProductId productId: String) -> AnyPublisher<ProductDetail, Error> {
+        urlSession.dataTaskPublisher(for: resolveURL(forProductId: productId))
+            .map(\.data)
+            .decode(type: [ItemResponse<ProductDetail>].self, decoder: JSONDecoder())
+            .compactMap{ $0.first }
+            .map(\.body)
+            .eraseToAnyPublisher()
+    }
+    
+    private func resolveURL(forProductId productId: String) -> URLRequest {
+        let url = baseUrl.appendingPathComponent("/items")
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+        components.queryItems = [
+            URLQueryItem(name: "ids", value: productId)
+        ]
+        return URLRequest(url: components.url!)
+    }
 }
