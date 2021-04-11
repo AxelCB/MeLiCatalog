@@ -11,25 +11,31 @@ struct ProductRow: View {
     let product: Product
     
     var body: some View {
-        HStack (spacing: 8) {
+        HStack (alignment: .center, spacing: 8) {
             if let imageUrl = URL(string: product.imageUrl),
                let imageData = try? Data(contentsOf: imageUrl),
                let uiImage = UIImage(data: imageData) {
                 Image(uiImage: uiImage)
+                    .frame(width: 90, height: 90)
                     .cornerRadius(25)
             } else {
-                Image("person")
+                Image("NotAvailable")
+                    .frame(width: 90, height: 90)
+                    .cornerRadius(25)
             }
             VStack (alignment: .leading, spacing: 8) {
                 Text(product.title)
                     .font(.subheadline)
+                    .lineLimit(2)
                 Text("\(product.formattedPrice)")
                     .font(.title2)
                     .fontWeight(.medium)
             }
             .padding()
+            Spacer()
         }
-        .padding()
+        .padding(.horizontal)
+        .redacted(reason: product.id.isEmpty ? .placeholder : [])
     }
 }
 
