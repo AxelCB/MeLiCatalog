@@ -18,6 +18,7 @@
 		A60E4753261D1E220034DAE2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4752261D1E220034DAE2 /* ProductDetailView.swift */; };
 		A6113868261E6628009876FB /* ProductCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6113867261E6628009876FB /* ProductCatalogViewModel.swift */; };
 		A669FF50261D4059003491D8 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669FF4F261D4059003491D8 /* SearchBarView.swift */; };
+		A68012F62623E9FE005879BB /* DescriptionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68012F52623E9FE005879BB /* DescriptionResponse.swift */; };
 		A6A03229262213AF00E6FDD0 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A03228262213AF00E6FDD0 /* ProductDetail.swift */; };
 		A6A0322C262213FC00E6FDD0 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0322B262213FC00E6FDD0 /* ProductDetailViewModel.swift */; };
 		A6A0322F262218C700E6FDD0 /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0322E262218C700E6FDD0 /* ItemResponse.swift */; };
@@ -41,6 +42,7 @@
 		A60E4752261D1E220034DAE2 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		A6113867261E6628009876FB /* ProductCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogViewModel.swift; sourceTree = "<group>"; };
 		A669FF4F261D4059003491D8 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		A68012F52623E9FE005879BB /* DescriptionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionResponse.swift; sourceTree = "<group>"; };
 		A6A03228262213AF00E6FDD0 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		A6A0322B262213FC00E6FDD0 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		A6A0322E262218C700E6FDD0 /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				A604CAE126211E5300F50E32 /* PaginatedResponse.swift */,
 				A6A03228262213AF00E6FDD0 /* ProductDetail.swift */,
 				A6A0322E262218C700E6FDD0 /* ItemResponse.swift */,
+				A68012F52623E9FE005879BB /* DescriptionResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				A6A0322F262218C700E6FDD0 /* ItemResponse.swift in Sources */,
 				A60E473A261CA4110034DAE2 /* ProductCatalogView.swift in Sources */,
 				A6A032322623C2C700E6FDD0 /* CarouselView.swift in Sources */,
+				A68012F62623E9FE005879BB /* DescriptionResponse.swift in Sources */,
 				A604CAE226211E5300F50E32 /* PaginatedResponse.swift in Sources */,
 				A60E4738261CA4110034DAE2 /* MeLiCatalogApp.swift in Sources */,
 				A604CADF261FFABE00F50E32 /* Page.swift in Sources */,

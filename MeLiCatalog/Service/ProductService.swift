@@ -40,12 +40,26 @@ class ProductService {
         return URLRequest(url: components.url!)
     }
     
-    func load(withProductId productId: String) -> AnyPublisher<ProductDetail, Error> {
+    func loadProduct(withId productId: String) -> AnyPublisher<ProductDetail, Error> {
         urlSession.dataTaskPublisher(for: resolveURL(forProductId: productId))
             .map(\.data)
             .decode(type: [ItemResponse<ProductDetail>].self, decoder: JSONDecoder())
             .compactMap{ $0.first }
             .map(\.body)
+            .zip(loadDescrption(withProductId: productId))
+            .map { productDetail, description -> ProductDetail in
+                var productDetail = productDetail
+                productDetail.updateDescription(with: description)
+                return productDetail
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func loadDescrption(withProductId productId: String) -> AnyPublisher<String, Error> {
+        urlSession.dataTaskPublisher(for: URLRequest(url: baseUrl.appendingPathComponent("/items/\(productId)/description")))
+            .map(\.data)
+            .decode(type: DescriptionResponse.self, decoder: JSONDecoder())
+            .map(\.text)
             .eraseToAnyPublisher()
     }
     

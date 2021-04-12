@@ -1,5 +1,5 @@
 //
-//  ImageCarousel.swift
+//  Carousel.swift
 //  MeLiCatalog
 //
 //  Created by Axel Collard Bovy on 11/04/2021.

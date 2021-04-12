@@ -13,7 +13,8 @@ struct ProductDetail: Codable {
     let price: Double
     let stock: Int
     let condition: Condition
-    let pictures: [Picture] = []
+    let pictures: [Picture]
+    var description: String?
     
     var formattedPrice: String {
         let currencyFormatter = NumberFormatter()
@@ -21,6 +22,10 @@ struct ProductDetail: Codable {
         currencyFormatter.locale = Locale.init(identifier: "es_AR")
         currencyFormatter.maximumFractionDigits = 0
         return currencyFormatter.string(from: NSNumber(value: price)) ?? "$0"
+    }
+    
+    mutating func updateDescription(with text: String) {
+        description = text
     }
     
     enum CodingKeys: String, CodingKey {
@@ -46,5 +51,5 @@ struct ProductDetail: Codable {
 extension ProductDetail: Identifiable {}
 
 extension ProductDetail {
-    static let EXAMPLE = ProductDetail(id: "MLA101010101", title: "Samsung Galaxy A51 128 Gb Prism Crush White 4 Gb Ram", price: 42999, stock: 10, condition: .new)
+    static let EXAMPLE = ProductDetail(id: "MLA101010101", title: "Samsung Galaxy A51 128 Gb Prism Crush White 4 Gb Ram", price: 42999, stock: 10, condition: .new, pictures: [])
 }
