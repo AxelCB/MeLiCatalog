@@ -8,17 +8,55 @@
 import SwiftUI
 
 struct ProductDetailView: View {
-    let viewModel: ProductDetailViewModel
+    @ObservedObject var viewModel: ProductDetailViewModel
     
     init(product: Product) {
         viewModel = ProductDetailViewModel(productId: product.id)
     }
     
     var body: some View {
-        Text(viewModel.product.title)
-            .onAppear {
-                viewModel.loadProductDetail()
+        ScrollView(.vertical) {
+            Text(viewModel.productDetail?.title ?? "")
+                .font(.headline)
+                .padding(.horizontal)
+                .onAppear {
+                    viewModel.loadProductDetail()
+                }
+
+            if !viewModel.isLoading {
+                CarouselView(items: viewModel.imageUrls) { imageUrlString in
+                    Group {
+                        if let imageUrl = URL(string: imageUrlString),
+                           let imageData = try? Data(contentsOf: imageUrl),
+                           let uiImage = UIImage(data: imageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 300)
+                                .cornerRadius(5)
+
+                        } else {
+                            Image("NotAvailable")
+                                .frame(height: 300)
+                                .cornerRadius(5)
+                        }
+                    }
+                    .padding(.bottom, 45)
+                }
+                .frame(maxHeight: 350)
             }
+            Text(viewModel.productDetail?.description ?? "")
+                .padding()
+            
+        }
+        .redacted(reason: viewModel.isLoading ? .placeholder : [] )
+        .overlay(
+            Group {
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+            }
+        )
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class ProductDetailViewModel: ObservableObject {
-    @Published private var productDetail: ProductDetail?
+    @Published var productDetail: ProductDetail?
     @Published var isLoading = true
     
     let productId: String
@@ -19,13 +19,17 @@ class ProductDetailViewModel: ObservableObject {
         productDetail ?? ProductDetail.EXAMPLE
     }
     
+    var imageUrls: [String] {
+        productDetail?.pictures.map { $0.url } ?? []
+    }
+    
     init(productId: String) {
         self.productId = productId
     }
     
     func loadProductDetail() {
         ProductService.shared
-            .load(withProductId: productId)
+            .loadProduct(withId: productId)
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
