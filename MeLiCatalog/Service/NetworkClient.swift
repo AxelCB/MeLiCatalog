@@ -10,7 +10,6 @@ import Combine
 
 protocol NetworkClient {
     func performRequest(_ endpoint: Endpoint) -> AnyPublisher<Data, Error>
-    
 }
 
 extension URLSession: NetworkClient {
@@ -20,11 +19,13 @@ extension URLSession: NetworkClient {
         }
         return dataTaskPublisher(for: URLRequest(url: url))
             .map(\.data)
-            .mapError{ $0 }
+            .mapError{ NetworkError.connectionError($0) }
             .eraseToAnyPublisher()
     }
 }
 
 enum NetworkError: Error {
     case invalidUrl
+    case noConnection
+    case connectionError(Error)
 }

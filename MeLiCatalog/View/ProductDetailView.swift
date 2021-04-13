@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProductDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: ProductDetailViewModel
     
     init(product: Product) {
@@ -49,7 +50,18 @@ struct ProductDetailView: View {
                 .padding()
             
         }
-        .redacted(reason: viewModel.isLoading ? .placeholder : [] )
+        .redacted(reason: viewModel.isLoading || viewModel.product.id.isEmpty ? .placeholder : [] )
+        .alert(isPresented: $viewModel.hasError) {
+            Alert(title: Text("Error"),
+                  message: Text(LocalizedStringKey(viewModel.error?.messageKey ?? "internalError")),
+                  dismissButton: .default(
+                    Text("OK"),
+                    action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                  )
+            )
+        }
         .overlay(
             Group {
                 if viewModel.isLoading {

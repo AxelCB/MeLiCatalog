@@ -11,6 +11,12 @@ import Combine
 class ProductDetailViewModel: ObservableObject {
     @Published var productDetail: ProductDetail?
     @Published var isLoading = true
+    @Published var error: DisplayError? {
+        didSet {
+            hasError = error != nil
+        }
+    }
+    @Published var hasError = false
     
     let productId: String
     private var subscription: Set<AnyCancellable> = []
@@ -20,7 +26,7 @@ class ProductDetailViewModel: ObservableObject {
     }
     
     var imageUrls: [String] {
-        productDetail?.pictures.map { $0.url } ?? []
+        product.pictures.map { $0.url }
     }
     
     init(productId: String) {
@@ -36,6 +42,10 @@ class ProductDetailViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     print(error)
+                    if let networkError = error as? NetworkError {
+                        self.error = DisplayError(from: networkError)
+                    }
+                    self.isLoading = false
                 case .finished:
                     debugPrint("Finished getting products detail")
                 }

@@ -7,15 +7,23 @@
 
 import Foundation
 import Combine
-
+import Network
 
 class ProductService {
     static let shared = ProductService()
     
     let networkClient: NetworkClient
+    let monitor: NWPathMonitor
+    var isDeviceCurrentlyConnected = false
     
     fileprivate init(networkClient: NetworkClient = URLSession.shared) {
         self.networkClient = networkClient
+        monitor = NWPathMonitor()
+        monitor.pathUpdateHandler = { path in
+            self.isDeviceCurrentlyConnected = path.status == .satisfied
+            print(path)
+        }
+        monitor.start(queue: .global())
     }
     
     func getNextPageFrom(_ currentPage: Page, withSearchTerm searchTerm: String?) -> AnyPublisher<ServiceResponse.Paginated<Product>, Error> {
@@ -24,13 +32,19 @@ class ProductService {
     }
     
     func loadPage(page: Page, withSearchTerm searchTerm: String?) -> AnyPublisher<ServiceResponse.Paginated<Product>, Error> {
-        networkClient.performRequest(Endpoint.search(searchTerm, forPage: page))
+        guard isDeviceCurrentlyConnected else {
+            return Fail(error: NetworkError.noConnection).eraseToAnyPublisher()
+        }
+        return networkClient.performRequest(Endpoint.search(searchTerm, forPage: page))
             .decode(type: ServiceResponse.Paginated<Product>.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
     
     func loadProduct(withId productId: String) -> AnyPublisher<ProductDetail, Error> {
-        networkClient.performRequest(Endpoint.productDetail(withId: productId))
+        guard isDeviceCurrentlyConnected else {
+            return Fail(error: NetworkError.noConnection).eraseToAnyPublisher()
+        }
+        return networkClient.performRequest(Endpoint.productDetail(withId: productId))
             .decode(type: [ServiceResponse.Item<ProductDetail>].self, decoder: JSONDecoder())
             .compactMap{ $0.first }
             .map(\.body)
@@ -44,7 +58,10 @@ class ProductService {
     }
     
     func loadDescrption(withProductId productId: String) -> AnyPublisher<String, Error> {
-        networkClient.performRequest(Endpoint.description(withProductId: productId))
+        guard isDeviceCurrentlyConnected else {
+            return Fail(error: NetworkError.noConnection).eraseToAnyPublisher()
+        }
+        return networkClient.performRequest(Endpoint.description(withProductId: productId))
             .decode(type: ServiceResponse.Description.self, decoder: JSONDecoder())
             .map(\.text)
             .eraseToAnyPublisher()

@@ -1,3 +1,6 @@
 "search"="Search";
 "products"="Products";
 "cancel"="Cancel";
+"connectionError"="Couldn't connect to required services. Please try again later";
+"noConnectionError"="Check your device's connection and try again later.";
+"internalError"="The app encountered an unexpected error. Please try again later";

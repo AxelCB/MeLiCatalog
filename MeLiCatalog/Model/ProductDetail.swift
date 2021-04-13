@@ -51,5 +51,9 @@ struct ProductDetail: Codable {
 extension ProductDetail: Identifiable {}
 
 extension ProductDetail {
-    static let EXAMPLE = ProductDetail(id: "MLA101010101", title: "Samsung Galaxy A51 128 Gb Prism Crush White 4 Gb Ram", price: 42999, stock: 10, condition: .new, pictures: [])
+    static let EXAMPLE = ProductDetail(id: "", title: "Samsung Galaxy A51 128 Gb Prism Crush White 4 Gb Ram", price: 42999, stock: 10, condition: .new, pictures: [Picture(id:"879201-MLA44443256851_122020",url:"http://http2.mlstatic.com/D_879201-MLA44443256851_122020-O.jpg"),
+         Picture(id:"722810-MLA44443560665_122020",url:"http://http2.mlstatic.com/D_722810-MLA44443560665_122020-O.jpg"),
+         Picture(id:"661720-MLA44443560664_122020",url:"http://http2.mlstatic.com/D_661720-MLA44443560664_122020-O.jpg"),
+         Picture(id:"669618-MLA44444104023_122020",url:"http://http2.mlstatic.com/D_669618-MLA44444104023_122020-O.jpg"),
+         Picture(id:"805850-MLA43336333258_092020",url:"http://http2.mlstatic.com/D_805850-MLA43336333258_092020-O.jpg")])
 }

@@ -13,6 +13,12 @@ class ProductCatalogViewModel: ObservableObject {
     @Published private(set) var products: [Product] = []
     @Published var searchTerm = ""
     @Published var isLoading = false
+    @Published var error: DisplayError? {
+        didSet {
+            hasError = error != nil
+        }
+    }
+    @Published var hasError = false
     
     private var subscription: Set<AnyCancellable> = []
     private var currentPage = Page(offset: 0)
@@ -56,6 +62,10 @@ class ProductCatalogViewModel: ObservableObject {
                 switch completion {
                 case .failure(let error):
                     print(error)
+                    if let networkError = error as? NetworkError {
+                        self.error = DisplayError(from: networkError)
+                    }
+                    self.isLoading = false
                 case .finished:
                     debugPrint("Finished getting next products search page")
                 }

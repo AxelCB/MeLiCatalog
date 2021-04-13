@@ -35,7 +35,11 @@ struct ProductCatalogView: View {
                     }
                 }
             )
-            .navigationTitle("products")    
+            .navigationTitle("products")
+            .alert(isPresented: $viewModel.hasError) {
+                Alert(title: Text("Error"),
+                      message: Text(LocalizedStringKey(viewModel.error?.messageKey ?? "internalError")))
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
