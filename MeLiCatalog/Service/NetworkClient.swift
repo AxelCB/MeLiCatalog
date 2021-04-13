@@ -25,3 +25,6 @@ extension URLSession: NetworkClient {
     }
 }
 
+enum NetworkError: Error {
+    case invalidUrl
+}
