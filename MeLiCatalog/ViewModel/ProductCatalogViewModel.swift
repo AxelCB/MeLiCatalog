@@ -19,6 +19,7 @@ class ProductCatalogViewModel: ObservableObject {
         }
     }
     @Published var hasError = false
+    @Published var hasSearched = false
     
     private var subscription: Set<AnyCancellable> = []
     private var currentPage = Page(offset: 0)
@@ -71,6 +72,7 @@ class ProductCatalogViewModel: ObservableObject {
                 }
             } receiveValue: { paginatedResponse in
                 self.isLoading = false
+                self.hasSearched = true
                 self.products.append(contentsOf: paginatedResponse.results)
                 self.currentPage = paginatedResponse.paging
             }.store(in: &subscription)

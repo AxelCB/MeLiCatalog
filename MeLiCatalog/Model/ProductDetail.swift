@@ -38,8 +38,8 @@ struct ProductDetail: Codable {
     }
     
     enum Condition: String, Codable {
-        case new
-        case used
+        case new = "new"
+        case used = "used"
     }
     
     struct Picture: Codable {

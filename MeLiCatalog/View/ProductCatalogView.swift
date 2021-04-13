@@ -32,6 +32,8 @@ struct ProductCatalogView: View {
                 Group {
                     if viewModel.isLoading {
                         ProgressView()
+                    } else if viewModel.hasSearched && viewModel.products.isEmpty {
+                        Text("noSearchResultsFound")
                     }
                 }
             )

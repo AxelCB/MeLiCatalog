@@ -17,8 +17,8 @@ struct ProductDetailView: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            Text(viewModel.productDetail?.title ?? "")
-                .font(.headline)
+            Text(viewModel.product.title)
+                .font(.title2)
                 .padding(.horizontal)
                 .onAppear {
                     viewModel.loadProductDetail()
@@ -46,7 +46,26 @@ struct ProductDetailView: View {
                 }
                 .frame(maxHeight: 350)
             }
-            Text(viewModel.productDetail?.description ?? "")
+            HStack(spacing: 24) {
+                Text(String(viewModel.product.formattedPrice))
+                    .font(.title3)
+                    .bold()
+                Text(LocalizedStringKey(viewModel.product.condition.rawValue))
+                    .font(.subheadline)
+                Spacer()
+            }
+            .padding()
+            HStack {
+                Text("currentStock")
+                    .fontWeight(.medium)
+                Text(String(viewModel.product.stock))
+                Spacer()
+
+            }
+            .padding()
+            
+            Text(viewModel.product.description ?? "")
+                .font(.body)
                 .padding()
             
         }

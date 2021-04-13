@@ -4,3 +4,7 @@
 "connectionError"="Ha ocurrido un error al conectar a los servicios. Por favor, reintente nuevamente más tarde";
 "noConnectionError"="Revise la conexión de su dispositivo reintente nuevamente más tarde.";
 "internalError"="Ha ocurrido un error inesperado.  Por favor, reintente nuevamente más tarde";
+"currentStock"="Unidades disponibles:";
+"new"="Nuevo";
+"used"="Usado";
+"noSearchResultsFound"="No se encontraron resultados para su búsqueda.";
