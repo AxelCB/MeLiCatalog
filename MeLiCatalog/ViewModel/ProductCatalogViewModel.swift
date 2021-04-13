@@ -19,7 +19,7 @@ class ProductCatalogViewModel: ObservableObject {
     
     init() {
         $searchTerm
-            .debounce(for: .milliseconds(750), scheduler: RunLoop.main)
+            .debounce(for: .milliseconds(750), scheduler: DispatchQueue.main)
             .removeDuplicates()
             .filter { $0.count > 3 }
             .map({ (string) -> String? in
@@ -32,8 +32,13 @@ class ProductCatalogViewModel: ObservableObject {
                 return trimmedString
             })
             .compactMap{ $0 }
-            .sink { (_) in
-                //
+            .sink { completion in
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                case .finished:
+                    debugPrint("SearchTerm publisher finished")
+                }
             } receiveValue: { [self] (searchField) in
                 self.isLoading = true
                 self.products = []
@@ -45,13 +50,14 @@ class ProductCatalogViewModel: ObservableObject {
     
     private func searchProducts(forTerm term: String) {
         ProductService.shared.getNextPageFrom(currentPage, withSearchTerm: term)
+            .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
                     print(error)
                 case .finished:
-                    print("Success")
+                    debugPrint("Finished getting next products search page")
                 }
             } receiveValue: { paginatedResponse in
                 self.isLoading = false

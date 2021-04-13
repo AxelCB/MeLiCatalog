@@ -30,13 +30,14 @@ class ProductDetailViewModel: ObservableObject {
     func loadProductDetail() {
         ProductService.shared
             .loadProduct(withId: productId)
+            .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
             .sink { completion in
                 switch completion {
                 case .failure(let error):
                     print(error)
                 case .finished:
-                    print("Success")
+                    debugPrint("Finished getting products detail")
                 }
             } receiveValue: { productDetail in
                 self.isLoading = false
