@@ -8,12 +8,12 @@
 import Foundation
 
 struct ServiceResponse {
-    struct Paginated<T: Decodable>: Decodable {
+    struct Paginated<T: Codable>: Codable {
         let paging: Page
         let results: [T]
     }
     
-    struct Item<T: Decodable>: Decodable {
+    struct Item<T: Codable>: Codable {
         let code: Int
         let body: T
     }

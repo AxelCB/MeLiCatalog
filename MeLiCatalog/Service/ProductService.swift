@@ -16,7 +16,7 @@ class ProductService {
     let monitor: NWPathMonitor
     var isDeviceCurrentlyConnected = false
     
-    fileprivate init(networkClient: NetworkClient = URLSession.shared) {
+    init(networkClient: NetworkClient = URLSession.shared) {
         self.networkClient = networkClient
         monitor = NWPathMonitor()
         monitor.pathUpdateHandler = { path in

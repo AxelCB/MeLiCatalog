@@ -17,16 +17,32 @@
 		A60E4753261D1E220034DAE2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60E4752261D1E220034DAE2 /* ProductDetailView.swift */; };
 		A6113868261E6628009876FB /* ProductCatalogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6113867261E6628009876FB /* ProductCatalogViewModel.swift */; };
 		A64AAA4C26264F4D003297BA /* DisplayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64AAA4B26264F4D003297BA /* DisplayError.swift */; };
+		A64AAA5A262671DC003297BA /* MockedNetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64AAA59262671DC003297BA /* MockedNetworkClient.swift */; };
+		A64AAA6226267B78003297BA /* DescriptionsMockedData.json in Resources */ = {isa = PBXBuildFile; fileRef = A64AAA5F26267B78003297BA /* DescriptionsMockedData.json */; };
+		A64AAA6326267B78003297BA /* ItemsMockedData.json in Resources */ = {isa = PBXBuildFile; fileRef = A64AAA6026267B78003297BA /* ItemsMockedData.json */; };
+		A64AAA6426267B78003297BA /* SearchMockedData.json in Resources */ = {isa = PBXBuildFile; fileRef = A64AAA6126267B78003297BA /* SearchMockedData.json */; };
 		A669FF50261D4059003491D8 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A669FF4F261D4059003491D8 /* SearchBarView.swift */; };
 		A680130626250E39005879BB /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680130526250E39005879BB /* NetworkClient.swift */; };
 		A680130926251212005879BB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680130826251212005879BB /* Endpoint.swift */; };
 		A680130D26251E81005879BB /* ServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680130C26251E81005879BB /* ServiceResponse.swift */; };
+		A68013622625376A005879BB /* ProductServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68013612625376A005879BB /* ProductServiceTests.swift */; };
+		A680136626253CD7005879BB /* XCTestCase+AwaitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A680136526253CD7005879BB /* XCTestCase+AwaitPublisher.swift */; };
 		A6A03229262213AF00E6FDD0 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A03228262213AF00E6FDD0 /* ProductDetail.swift */; };
 		A6A0322C262213FC00E6FDD0 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A0322B262213FC00E6FDD0 /* ProductDetailViewModel.swift */; };
 		A6A032322623C2C700E6FDD0 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A032312623C2C700E6FDD0 /* CarouselView.swift */; };
 		A6FC96AF261D650600A3D6F9 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC96AE261D650600A3D6F9 /* ProductRow.swift */; };
 		A6FC96B6261E529900A3D6F9 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FC96B5261E529900A3D6F9 /* Product.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6801354262520AE005879BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A60E472C261CA4110034DAE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A60E4733261CA4110034DAE2;
+			remoteInfo = MeLiCatalog;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A604CADB261FF9F500F50E32 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
@@ -42,10 +58,18 @@
 		A60E4752261D1E220034DAE2 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		A6113867261E6628009876FB /* ProductCatalogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCatalogViewModel.swift; sourceTree = "<group>"; };
 		A64AAA4B26264F4D003297BA /* DisplayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayError.swift; sourceTree = "<group>"; };
+		A64AAA59262671DC003297BA /* MockedNetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkClient.swift; sourceTree = "<group>"; };
+		A64AAA5F26267B78003297BA /* DescriptionsMockedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = DescriptionsMockedData.json; path = MeLiCatalogTests/Resources/DescriptionsMockedData.json; sourceTree = SOURCE_ROOT; };
+		A64AAA6026267B78003297BA /* ItemsMockedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ItemsMockedData.json; path = MeLiCatalogTests/Resources/ItemsMockedData.json; sourceTree = SOURCE_ROOT; };
+		A64AAA6126267B78003297BA /* SearchMockedData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SearchMockedData.json; path = MeLiCatalogTests/Resources/SearchMockedData.json; sourceTree = SOURCE_ROOT; };
 		A669FF4F261D4059003491D8 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		A680130526250E39005879BB /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		A680130826251212005879BB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A680130C26251E81005879BB /* ServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResponse.swift; sourceTree = "<group>"; };
+		A680134F262520AE005879BB /* MeLiCatalogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeLiCatalogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6801353262520AE005879BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A68013612625376A005879BB /* ProductServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductServiceTests.swift; sourceTree = "<group>"; };
+		A680136526253CD7005879BB /* XCTestCase+AwaitPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+AwaitPublisher.swift"; sourceTree = "<group>"; };
 		A6A03228262213AF00E6FDD0 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		A6A0322B262213FC00E6FDD0 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
 		A6A032312623C2C700E6FDD0 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
@@ -55,6 +79,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		A60E4731261CA4110034DAE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A680134C262520AE005879BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -78,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				A60E4736261CA4110034DAE2 /* MeLiCatalog */,
+				A6801350262520AE005879BB /* MeLiCatalogTests */,
 				A60E4735261CA4110034DAE2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				A60E4734261CA4110034DAE2 /* MeLiCatalog.app */,
+				A680134F262520AE005879BB /* MeLiCatalogTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,6 +155,28 @@
 				A64AAA4B26264F4D003297BA /* DisplayError.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A647C45626267CD20036117F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A64AAA5F26267B78003297BA /* DescriptionsMockedData.json */,
+				A64AAA6026267B78003297BA /* ItemsMockedData.json */,
+				A64AAA6126267B78003297BA /* SearchMockedData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A6801350262520AE005879BB /* MeLiCatalogTests */ = {
+			isa = PBXGroup;
+			children = (
+				A647C45626267CD20036117F /* Resources */,
+				A6801353262520AE005879BB /* Info.plist */,
+				A68013612625376A005879BB /* ProductServiceTests.swift */,
+				A680136526253CD7005879BB /* XCTestCase+AwaitPublisher.swift */,
+				A64AAA59262671DC003297BA /* MockedNetworkClient.swift */,
+			);
+			path = MeLiCatalogTests;
 			sourceTree = "<group>";
 		};
 		A6FC96B3261E514F00A3D6F9 /* Model */ = {
@@ -167,6 +222,24 @@
 			productReference = A60E4734261CA4110034DAE2 /* MeLiCatalog.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A680134E262520AE005879BB /* MeLiCatalogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6801356262520AE005879BB /* Build configuration list for PBXNativeTarget "MeLiCatalogTests" */;
+			buildPhases = (
+				A680134B262520AE005879BB /* Sources */,
+				A680134C262520AE005879BB /* Frameworks */,
+				A680134D262520AE005879BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6801355262520AE005879BB /* PBXTargetDependency */,
+			);
+			name = MeLiCatalogTests;
+			productName = MeLiCatalogTests;
+			productReference = A680134F262520AE005879BB /* MeLiCatalogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -178,6 +251,10 @@
 				TargetAttributes = {
 					A60E4733261CA4110034DAE2 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					A680134E262520AE005879BB = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = A60E4733261CA4110034DAE2;
 					};
 				};
 			};
@@ -196,6 +273,7 @@
 			projectRoot = "";
 			targets = (
 				A60E4733261CA4110034DAE2 /* MeLiCatalog */,
+				A680134E262520AE005879BB /* MeLiCatalogTests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +286,16 @@
 				A60E473F261CA4120034DAE2 /* Preview Assets.xcassets in Resources */,
 				A60E474C261D17200034DAE2 /* Localizable.strings in Resources */,
 				A60E473C261CA4120034DAE2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A680134D262520AE005879BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64AAA6426267B78003297BA /* SearchMockedData.json in Resources */,
+				A64AAA6226267B78003297BA /* DescriptionsMockedData.json in Resources */,
+				A64AAA6326267B78003297BA /* ItemsMockedData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +325,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A680134B262520AE005879BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64AAA5A262671DC003297BA /* MockedNetworkClient.swift in Sources */,
+				A68013622625376A005879BB /* ProductServiceTests.swift in Sources */,
+				A680136626253CD7005879BB /* XCTestCase+AwaitPublisher.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6801355262520AE005879BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A60E4733261CA4110034DAE2 /* MeLiCatalog */;
+			targetProxy = A6801354262520AE005879BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A60E474E261D17200034DAE2 /* Localizable.strings */ = {
@@ -412,6 +518,46 @@
 			};
 			name = Release;
 		};
+		A6801357262520AE005879BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G27V65K8EK;
+				INFOPLIST_FILE = MeLiCatalogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.axelcollardbovy.MeLiCatalogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeLiCatalog.app/MeLiCatalog";
+			};
+			name = Debug;
+		};
+		A6801358262520AE005879BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G27V65K8EK;
+				INFOPLIST_FILE = MeLiCatalogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ar.com.axelcollardbovy.MeLiCatalogTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeLiCatalog.app/MeLiCatalog";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -429,6 +575,15 @@
 			buildConfigurations = (
 				A60E4744261CA4120034DAE2 /* Debug */,
 				A60E4745261CA4120034DAE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6801356262520AE005879BB /* Build configuration list for PBXNativeTarget "MeLiCatalogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6801357262520AE005879BB /* Debug */,
+				A6801358262520AE005879BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
